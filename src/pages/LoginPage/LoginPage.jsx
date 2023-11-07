@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function LoginPage() {
+export default function LoginPage(props) {
   const [loginFormData, setLoginFormData] = useState({
     userName: "",
   });
 
   function handleLogin(evt) {
     evt.preventDefault();
-    setUser({ userName: userName, userLoggedIn: true });
+    props.setUser({ userName: loginFormData.userName, userLoggedIn: true });
   }
 
   return (

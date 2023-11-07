@@ -9,7 +9,9 @@ import MovieDetailPage from "../MovieDetailPage/MovieDetailPage.jsx";
 import ActorsListPage from "../ActorsListPage/ActorsListPage.jsx";
 
 export default function App() {
+  
   const [user, setUser] = useState({ userLoggedIn: null, username: null });
+
   return (
     <main className="App">
       {user.userLoggedIn ? (
@@ -22,7 +24,7 @@ export default function App() {
           </Routes>
         </>
       ) : (
-        <LoginPage user={user} />
+        <LoginPage user={user} setUser={setUser} />
       )}
     </main>
   );
