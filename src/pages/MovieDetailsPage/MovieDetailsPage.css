@@ -1,0 +1,9 @@
+/* *{
+  border: 2px solid grey;
+} */
+
+.movie-details-poster {
+  display:inline;
+  width: 300px;
+  
+}
