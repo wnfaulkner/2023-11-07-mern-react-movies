@@ -12,17 +12,17 @@ import { movies } from "../../data.js";
 
 export default function App() {
   
-  const [user, setUser] = useState({ userLoggedIn: true, username: null });
-
+  const [user, setUser] = useState({ userLoggedIn: true, username: 'TEST USER (CHANGE IN APP.JS)' });
+ //console.log(user)
   return (
     <main className="App">
       {user.userLoggedIn ? (
         <>
           <NavBar user={user} />
           <Routes>
-            <Route path="/" element={<MoviesListPage movies={movies} />} />
-            <Route path="/movies/:movieName" element={<MovieDetailsPage />} />
-            <Route path="/actors" element={<ActorsListPage />} />
+            <Route path="/" element={<MoviesListPage movies={movies} user={user} setUser={setUser} />} />
+            <Route path="/movies/:movieName" element={<MovieDetailsPage user={user} setUser={setUser}/>} />
+            <Route path="/actors" element={<ActorsListPage movies={movies} user={user} setUser={setUser} />} />
           </Routes>
         </>
       ) : (
